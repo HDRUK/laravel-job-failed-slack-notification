@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Hdruk\\LaravelJobFailedSlackNotification\\src\\JobFailedSlackServiceProvider"
+                "Hdruk\\LaravelJobFailedSlackNotification\\JobFailedSlackServiceProvider"
             ]
         }
     }
