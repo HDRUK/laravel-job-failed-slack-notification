@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Notifications;
+namespace Hdruk\LaravelJobFailedSlackNotification\Notifications;
 
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\SlackMessage;
@@ -19,7 +18,7 @@ class JobFailedSlackNotification extends Notification
     {
         $job = $this->event->job;
         $env = strtoupper(config('app.env'));
-        $name = config('app.name') ?? 'No App Name Configured';
+        $name = config('job-failed-slack.app_name') ?? 'No App Name Configured';
         $jobId = $job->getJobId();
         $payload = $job->payload();
         $jobName = $payload['displayName'] ?? get_class($job);
@@ -30,13 +29,13 @@ class JobFailedSlackNotification extends Notification
             ->attachment(function ($attachment) use ($job, $env, $jobName, $jobId) {
                 $attachment->fields([
                     'Environment' => $env,
-                    'Job'        => $jobName,
-                    'ID'        => $jobId,
-                    'Queue'      => $job->getQueue(),
+                    'Job' => $jobName,
+                    'ID' => $jobId,
+                    'Queue' => $job->getQueue(),
                     'Connection' => $this->event->connectionName,
-                    'Exception'  => $this->event->exception->getMessage(),
+                    'Exception' => $this->event->exception->getMessage(),
                 ]);
             });
     }
-
 }
+
