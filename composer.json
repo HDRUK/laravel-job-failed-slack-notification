@@ -1,6 +1,6 @@
 {
     "name": "hdr/laravel-job-failed-slack-notification",
-    "description": "Automatically sends detailed Slack notifications whenever a Laravel queued job fails, including job name, queue, connection, and exception details.s",
+    "description": "Automatically sends detailed Slack notifications whenever a Laravel queued job fails, including job name, queue, connection, and exception details.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Hdruk\\JobFailedSlack\\": "src/"
+            "Hdruk\\LaravelJobFailedSlackNotification\\": "src/"
         }
     },
     "extra": {

@@ -1,11 +1,11 @@
 <?php
 
-namespace YourVendor\JobFailedSlack;
+namespace Hdruk\LaravelJobFailedSlackNotification;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Queue\Events\JobFailed;
-use YourVendor\JobFailedSlack\Listeners\NotifySlackOfFailedJob;
+use Hdruk\LaravelJobFailedSlackNotification\Listeners\NotifySlackOfFailedJob;
 
 class JobFailedSlackServiceProvider extends ServiceProvider
 {
